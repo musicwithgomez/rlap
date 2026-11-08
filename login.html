@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inloggen · Rise Like A Phoenix</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261108113603">
+</head>
+<body data-page="login" data-no-demo-banner="1">
+  <div id="site-header"></div>
+  <main class="auth-wrap">
+    <div class="hero-bg"></div>
+    <canvas id="embers"></canvas>
+    <div class="card auth-card">
+      <div data-phoenix style="width:90px;margin:0 auto 6px"></div>
+      <h1 class="center" style="font-size:2.3rem">Inloggen</h1>
+      <p class="muted center" style="font-size:.95rem">Enkel voor de beheerder van Rise Like A Phoenix.</p>
+      <form class="form" id="login-form" style="margin-top:20px" novalidate>
+        <div class="field"><label for="l-email">E-mail</label><input id="l-email" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="l-pw">Wachtwoord</label><input id="l-pw" type="password" autocomplete="current-password" required></div>
+        <div class="form-msg" id="login-msg" role="alert"></div>
+        <button class="btn btn-primary" type="submit" style="justify-content:center">Inloggen <span class="arrow">→</span></button>
+        <button class="btn btn-ghost btn-sm" type="button" id="forgot" style="justify-content:center">Wachtwoord vergeten?</button>
+      </form>
+      <p class="hint center hidden" id="demo-hint" style="margin-top:18px;font-size:.85rem;color:var(--warn)">Demomodus: gebruik eender welk e-mailadres met wachtwoord <strong>phoenix</strong>.</p>
+    </div>
+  </main>
+  <script src="js/config.js?v=20261108113603"></script>
+  <script src="js/questions.js?v=20261108113603"></script>
+  <script src="js/data.js?v=20261108113603"></script>
+  <script src="js/layout.js?v=20261108113603"></script>
+  <script>
+    (function () {
+      const msg = document.getElementById("login-msg");
+      const show = (t, ok) => { msg.className = "form-msg show " + (ok ? "ok" : "err"); msg.textContent = t; };
+      if (DB.isDemo) document.getElementById("demo-hint").classList.remove("hidden");
+      let checked = false;
+      DB.onAuth(({ user, isAdmin }) => {
+        if (user && isAdmin) location.replace("admin.html");
+        else if (user && !isAdmin && checked) show("Dit account heeft geen admin-toegang.");
+        checked = true;
+      });
+      document.getElementById("login-form").addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("l-email").value.trim(), pw = document.getElementById("l-pw").value;
+        if (!email || !pw) return show("Vul je e-mail en wachtwoord in.");
+        const b = e.target.querySelector("button[type=submit]"); b.disabled = true;
+        try {
+          await DB.login(email, pw);
+          if (DB.isDemo) location.replace("admin.html");
+        } catch (err) { show(DB.errorText(err)); }
+        finally { b.disabled = false; }
+      });
+      document.getElementById("forgot").addEventListener("click", async () => {
+        const email = document.getElementById("l-email").value.trim();
+        if (!email) return show("Vul eerst je e-mailadres in.");
+        try { await DB.resetPassword(email); show("Als dit adres gekend is, krijg je een mail om je wachtwoord te herstellen.", true); }
+        catch (err) { show(DB.errorText(err)); }
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Rise Like A Phoenix</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261108113603">
+</head>
+<body class="admin-body" data-page="admin" data-no-demo-banner="1">
+  <div id="gate" style="min-height:100vh;display:grid;place-items:center"><div class="loader"></div></div>
+
+  <div id="app" class="hidden">
+    <div class="admin-mobile-bar">
+      <a class="brand" href="index.html" style="font-size:1.15rem"><span id="m-logo"></span>Rise Like A Phoenix</a>
+      <button class="icon-btn" id="side-open" aria-label="Menu"></button>
+    </div>
+    <div class="admin">
+      <aside class="admin-side" id="side">
+        <a class="brand" href="index.html"><span id="s-logo"></span><span>Rise Like A Phoenix</span></a>
+        <button class="admin-tab" data-tab="overzicht"><span data-i="home"></span>Vandaag <span class="count hidden" id="c-todo"></span></button>
+        <button class="admin-tab" data-tab="trajectenView"><span data-i="users"></span>Klanten <span class="count hidden" id="c-tr"></span></button>
+        <button class="admin-tab" data-tab="sessies"><span data-i="calendar"></span>Agenda</button>
+        <button class="admin-tab" data-tab="berichten"><span data-i="chat"></span>Berichten <span class="count hidden" id="c-br"></span></button>
+        <button class="admin-tab" data-tab="site"><span data-i="sliders"></span>Instellingen</button>
+        <div class="side-foot">
+          <span id="who"></span>
+          <span id="demo-tag" class="hidden" style="color:var(--warn)">Demomodus (niet gekoppeld aan Firebase)</span>
+          <button class="admin-tab" id="help" style="padding:8px 0"><span data-i="star"></span>Hoe werkt het?</button>
+          <a href="index.html" class="admin-tab" style="padding:8px 0"><span data-i="eye"></span>Bekijk website</a>
+          <button class="admin-tab" id="logout" style="padding:8px 0"><span data-i="logout"></span>Uitloggen</button>
+        </div>
+      </aside>
+      <main class="admin-main" id="view"></main>
+    </div>
+  </div>
+
+  <div class="panel-back" id="panel-back"></div>
+  <aside class="panel" id="panel" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="panel-head"><div id="panel-title"></div><button class="icon-btn" id="panel-close" aria-label="Sluiten"></button></div>
+    <div class="panel-body" id="panel-body"></div>
+    <div class="panel-foot" id="panel-foot"></div>
+  </aside>
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/config.js?v=20261108113603"></script>
+  <script src="js/questions.js?v=20261108113603"></script>
+  <script src="js/mailteksten.js?v=20261108113603"></script>
+  <script src="js/data.js?v=20261108113603"></script>
+  <script src="js/layout.js?v=20261108113603"></script>
+  <script src="js/mail.js?v=20261108113603"></script>
+  <script src="js/admin.js?v=20261108113603"></script>
+</body>
+</html>

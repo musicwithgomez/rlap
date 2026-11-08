@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Admin = er bestaat een document admins/{jouw-UID}
+    function isAdmin() {
+      return request.auth != null
+        && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+    function isStr(v, max) { return v is string && v.size() <= max; }
+
+    // Wie admin is, beheer je enkel via de Firebase Console
+    match /admins/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+    }
+
+    // Vragenlijsten: iedereen mag er één INDIENEN, enkel admin mag lezen/wijzigen.
+    // (Klant-login later: een klant mag dan enkel zijn eigen vragenlijsten lezen.)
+    match /vragenlijsten/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['naam','email','telefoon','sessieType','sessieNaam','pakket','pakketNaam','prijs','dier','antwoorden','akkoord','status','createdAt'])
+        && isStr(request.resource.data.naam, 150) && request.resource.data.naam.size() > 0
+        && isStr(request.resource.data.email, 200) && request.resource.data.email.matches('^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$')
+        && isStr(request.resource.data.telefoon, 40)
+        && request.resource.data.sessieType in ['hartmuur','bodycode','beliefcode','dieren']
+        && request.resource.data.antwoorden is list && request.resource.data.antwoorden.size() <= 60
+        && request.resource.data.akkoord == true
+        && request.resource.data.status == 'nieuw'
+        && request.resource.data.createdAt == request.time;
+      allow read: if isAdmin()
+        || (request.auth != null && request.auth.token.email_verified == true && resource.data.email == request.auth.token.email.lower());
+      allow update, delete: if isAdmin();
+    }
+
+    // Contactformulier
+    match /berichten/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['naam','email','telefoon','onderwerp','bericht','status','createdAt'])
+        && isStr(request.resource.data.naam, 150) && request.resource.data.naam.size() > 0
+        && isStr(request.resource.data.email, 200)
+        && isStr(request.resource.data.telefoon, 40)
+        && isStr(request.resource.data.onderwerp, 100)
+        && isStr(request.resource.data.bericht, 5000) && request.resource.data.bericht.size() > 0
+        && request.resource.data.status == 'nieuw'
+        && request.resource.data.createdAt == request.time;
+      allow read, update, delete: if isAdmin();
+    }
+
+    // Klantenfiches: enkel admin
+    match /klanten/{id} {
+      allow read, write: if isAdmin();
+    }
+
+    // Sessies: admin beheert; klant mag later enkel zijn eigen sessies zien
+    match /sessies/{id} {
+      allow read: if isAdmin()
+        || (request.auth != null && request.auth.token.email_verified == true && resource.data.klantEmail == request.auth.token.email.lower());
+      allow write: if isAdmin();
+    }
+
+    // Reviews: iedereen mag er één indienen; enkel goedgekeurde zijn publiek leesbaar
+    match /reviews/{id} {
+      allow create: if request.resource.data.keys().hasOnly(['naam','tekst','sterren','toestemming','trajectId','status','createdAt'])
+        && isStr(request.resource.data.naam, 80) && request.resource.data.naam.size() > 0
+        && isStr(request.resource.data.tekst, 3000) && request.resource.data.tekst.size() > 0
+        && request.resource.data.sterren is int && request.resource.data.sterren >= 1 && request.resource.data.sterren <= 5
+        && request.resource.data.toestemming is bool
+        && isStr(request.resource.data.trajectId, 60)
+        && request.resource.data.status == 'nieuw'
+        && request.resource.data.createdAt == request.time;
+      allow read: if resource.data.status == 'goedgekeurd' || isAdmin();
+      allow update, delete: if isAdmin();
+    }
+
+    // Instellingen (o.a. de vragen): iedereen mag lezen, enkel admin schrijven
+    match /instellingen/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

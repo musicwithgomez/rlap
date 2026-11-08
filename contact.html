@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Rise Like A Phoenix</title>
+  <meta name="description" content="Neem contact op met Nathalie De Ruysscher, Rise Like A Phoenix, Beerse.">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=20261108113603">
+</head>
+<body data-page="contact">
+  <div id="site-header"></div>
+  <main>
+    <section class="page-hero">
+      <div class="hero-bg"></div>
+      <canvas id="embers"></canvas>
+      <div data-phoenix class="hero-phoenix"></div>
+      <div class="container reveal">
+        <span class="eyebrow">Contact</span>
+        <h1>Klaar om te helen?</h1>
+        <p class="lead">Neem vandaag nog contact op.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:start">
+        <div class="card reveal">
+          <form class="form" id="contact-form" novalidate>
+            <div class="row-2">
+              <div class="field"><label for="c-naam">Naam <span class="req">*</span></label><input id="c-naam" name="naam" type="text" autocomplete="name" required maxlength="150"></div>
+              <div class="field"><label for="c-email">E-mail <span class="req">*</span></label><input id="c-email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+            </div>
+            <div class="row-2">
+              <div class="field"><label for="c-tel">Telefoon</label><input id="c-tel" name="telefoon" type="tel" autocomplete="tel" maxlength="40"></div>
+              <div class="field"><label for="c-onderwerp">Onderwerp</label>
+                <select id="c-onderwerp" name="onderwerp">
+                  <option>Algemene vraag</option><option>Hartmuur</option><option>Body Code & Emotiecode</option><option>Belief Code</option><option>Emotiecode voor Dieren</option>
+                </select>
+              </div>
+            </div>
+            <div class="field"><label for="c-bericht">Bericht <span class="req">*</span></label><textarea id="c-bericht" name="bericht" required maxlength="5000"></textarea></div>
+            <div class="honey" aria-hidden="true"><label>Laat leeg <input name="website" tabindex="-1" autocomplete="off"></label></div>
+            <label class="checkbox"><input type="checkbox" name="akkoord" required> <span>Ik ga akkoord dat mijn gegevens bewaard worden om mijn vraag te beantwoorden (<a href="https://www.iubenda.com/privacy-policy/21140043" target="_blank" rel="noopener">privacyverklaring</a>).</span></label>
+            <div class="form-msg" id="contact-msg" role="status"></div>
+            <div><button class="btn btn-primary" type="submit">Verstuur bericht <span class="arrow">→</span></button></div>
+          </form>
+        </div>
+        <div class="reveal" style="display:grid;gap:18px">
+          <div class="card" style="display:flex;gap:18px;align-items:center">
+            <div class="portrait" style="width:90px;height:90px"><img data-img="portret" alt="Nathalie De Ruysscher"></div>
+            <div><p style="font-family:var(--serif);font-size:1.5rem;margin:0">Nathalie De Ruysscher</p><p class="muted" style="margin:0">Healer</p></div>
+          </div>
+          <a class="card" href="tel:+32495993459" style="display:flex;gap:16px;align-items:center;color:var(--text)"><span data-icon="phone" class="ic-26"></span>+32 495 99 34 59</a>
+          <a class="card" href="mailto:nathalie@riselikeaphoenix.be" style="display:flex;gap:16px;align-items:center;color:var(--text)"><span data-icon="mail" class="ic-26"></span>nathalie@riselikeaphoenix.be</a>
+          <div class="card" style="display:flex;gap:16px;align-items:center"><span data-icon="pin" class="ic-26"></span><span>Kardinaal Cardijnlaan 86,<br>2340 Beerse</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="js/config.js?v=20261108113603"></script>
+  <script src="js/questions.js?v=20261108113603"></script>
+  <script src="js/data.js?v=20261108113603"></script>
+  <script src="js/layout.js?v=20261108113603"></script>
+  <script src="js/mail.js?v=20261108113603"></script>
+  <script src="js/pages.js?v=20261108113603"></script>
+</body>
+</html>

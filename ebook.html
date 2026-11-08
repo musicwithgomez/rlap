@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="nl-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rijs op als een feniks · gratis e-book · Rise Like A Phoenix</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&family=Caveat:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fcf8f4; --peach: #f8e9dc; --peach-2: #fdf1e7; --line: #f0dccb;
+    --text: #3b2a21; --muted: #6e5a4d; --soft: #9a8577;
+    --flame: #d9531f; --flame-2: #e2702e; --gold: #c2692b;
+    --serif: "Cormorant Garamond", Georgia, serif; --sans: "Jost", "Helvetica Neue", Arial, sans-serif; --script: "Caveat", cursive;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { margin: 0; background: #e9dfd6; color: var(--text); font-family: var(--sans); font-size: 11.2pt; line-height: 1.66; }
+  .photo { border-radius: 4mm; overflow: hidden; margin: 4mm 0; box-shadow: 0 6px 18px rgba(130, 70, 30, .12); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; filter: sepia(.25) saturate(1.1); }
+  .flow { display: grid; grid-template-columns: 1fr 5mm 1fr 5mm 1fr 5mm 1fr; align-items: start; gap: 1mm; background: linear-gradient(135deg, #fdf1e7, #fbe4d2); border-radius: 5mm; padding: 7mm 5mm 6mm; margin-top: 5mm; }
+  .flow-step { text-align: center; display: grid; justify-items: center; gap: 1.2mm; }
+  .flow-ic { width: 15mm; height: 15mm; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 3px 10px rgba(180, 90, 40, .15); margin-bottom: 1mm; }
+  .flow-ic svg { width: 7.5mm; height: 7.5mm; fill: none; stroke: var(--flame); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .flow-step strong { font-family: var(--serif); font-size: 13pt; }
+  .flow-step span { font-size: 8.6pt; color: var(--muted); line-height: 1.35; }
+  .flow-arrow { color: var(--flame-2); font-size: 14pt; text-align: center; margin-top: 4.5mm; }
+  .page > .quote.end { margin-top: auto; margin-bottom: 10mm; }
+  .page { width: 210mm; height: 297mm; margin: 12mm auto; background: #fff; position: relative; overflow: hidden; padding: 20mm 20mm 18mm; box-shadow: 0 10px 40px rgba(90, 50, 20, .18); display: flex; flex-direction: column; }
+  @page { size: A4; margin: 0; }
+  @media print { body { background: none; } .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; } .noprint { display: none !important; } }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.12; margin: 0 0 .45em; color: var(--text); }
+  h2 { font-size: 27pt; }
+  h3 { font-size: 15pt; margin-top: .9em; }
+  p { margin: 0 0 .75em; }
+  .eyebrow { font-size: 7.6pt; letter-spacing: .32em; text-transform: uppercase; color: var(--flame-2); font-weight: 500; display: block; margin-bottom: 4mm; }
+  .lead { font-size: 12pt; color: var(--muted); }
+  .accent { color: var(--flame); }
+  .muted { color: var(--muted); }
+  .script { font-family: var(--script); color: #b5552a; }
+  .pnum { position: absolute; bottom: 9mm; left: 20mm; right: 20mm; display: flex; justify-content: space-between; font-size: 7.6pt; color: var(--soft); letter-spacing: .12em; text-transform: uppercase; }
+  .chapter-no { font-family: var(--serif); font-size: 64pt; line-height: .8; color: #f6dcc8; position: absolute; right: 18mm; top: 14mm; font-weight: 700; }
+  .box { background: var(--peach-2); border: 1px solid var(--line); border-radius: 4mm; padding: 4.5mm 5.5mm; margin: 3mm 0 4mm; }
+  .box h3 { margin-top: 0; font-size: 13pt; }
+  .box p:last-child, .box ul:last-child { margin-bottom: 0; }
+  .note { border-left: 3px solid var(--flame-2); padding: 1mm 0 1mm 4.5mm; margin: 3mm 0 4mm; color: var(--muted); font-size: 9.8pt; }
+  ul.dots { list-style: none; padding: 0; margin: 0 0 .8em; }
+  ul.dots li { position: relative; padding-left: 6mm; margin-bottom: 1.6mm; }
+  ul.dots li::before { content: ""; position: absolute; left: 0; top: 2.2mm; width: 2.4mm; height: 2.4mm; border-radius: 50%; background: radial-gradient(circle, var(--flame-2) 0 40%, #fbe0cc 45%); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm 6mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .card { border: 1px solid var(--line); border-radius: 3.5mm; padding: 4mm 4.5mm; background: #fff; }
+  .card h4 { font-family: var(--serif); font-size: 13pt; margin: 0 0 1.5mm; color: var(--gold); }
+  .card p { margin: 0; font-size: 9.4pt; color: var(--muted); line-height: 1.5; }
+  .tip { display: grid; grid-template-columns: 11mm 1fr; gap: 4mm; margin-bottom: 4.5mm; }
+  .tip .n { width: 11mm; height: 11mm; border-radius: 50%; background: linear-gradient(135deg, var(--flame), var(--flame-2)); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-size: 15pt; font-weight: 700; }
+  .tip h4 { font-family: var(--serif); font-size: 14pt; margin: .5mm 0 1mm; }
+  .tip p { margin: 0 0 1mm; font-size: 9.8pt; }
+  .tip .how { font-size: 9.2pt; color: var(--muted); }
+  .steps { counter-reset: s; display: grid; gap: 3.5mm; }
+  .step { display: grid; grid-template-columns: 9mm 1fr; gap: 4mm; align-items: start; }
+  .step::before { counter-increment: s; content: counter(s); width: 9mm; height: 9mm; border-radius: 50%; border: 1px solid #ecc4a6; color: var(--gold); display: grid; place-items: center; font-family: var(--serif); font-size: 13pt; background: #fff; }
+  .step strong { display: block; font-size: 10.8pt; }
+  .step span { color: var(--muted); font-size: 9.6pt; }
+  .lines { border-bottom: 1px solid #e8d6c8; height: 8.5mm; }
+  .q { font-family: var(--serif); font-size: 13pt; margin: 4mm 0 1mm; }
+  table.diary { width: 100%; border-collapse: collapse; font-size: 9pt; margin-top: 2mm; }
+  table.diary th { text-align: left; font-weight: 500; font-size: 7.4pt; letter-spacing: .14em; text-transform: uppercase; color: var(--soft); border-bottom: 1.5px solid var(--line); padding: 2mm 2mm; }
+  table.diary td { border-bottom: 1px solid #f1e3d7; height: 9.5mm; padding: 0 2mm; color: var(--soft); }
+  .faq h4 { font-family: var(--serif); font-size: 13pt; margin: 3.5mm 0 .8mm; color: var(--text); }
+  .faq p { font-size: 9.6pt; color: var(--muted); margin-bottom: 1mm; }
+  .quote { font-family: var(--serif); font-style: italic; font-size: 16pt; line-height: 1.35; color: var(--text); text-align: center; margin: 6mm 8mm; }
+  .emo { display: flex; flex-wrap: wrap; gap: 2mm; margin: 2mm 0 4mm; }
+  .emo span { border: 1px solid #ecc4a6; background: #fff; border-radius: 99px; padding: .6mm 3mm; font-size: 9pt; color: var(--muted); }
+
+  /* cover */
+  .cover { padding: 0; background:
+      radial-gradient(ellipse 70% 45% at 70% 30%, rgba(255, 214, 160, .95), transparent 70%),
+      radial-gradient(ellipse 80% 50% at 20% 90%, rgba(244, 170, 110, .5), transparent 70%),
+      linear-gradient(180deg, #fbefe4, #f6dcc6); }
+  .cover-inner { padding: 26mm 22mm 20mm; display: flex; flex-direction: column; height: 100%; }
+  .cover .brand { display: flex; align-items: center; gap: 3mm; font-family: var(--serif); font-size: 15pt; color: var(--flame); font-weight: 600; }
+  .cover .brand img { width: 13mm; height: 13mm; }
+  .cover h1 { font-size: 52pt; line-height: .98; margin: 38mm 0 6mm; }
+  .cover .sub { font-size: 14pt; color: var(--muted); max-width: 140mm; line-height: 1.45; }
+  .cover .bird { position: absolute; right: -14mm; bottom: 34mm; width: 132mm; opacity: .9; }
+  .cover .gift { margin-top: auto; display: flex; align-items: end; justify-content: space-between; gap: 8mm; }
+  .cover .gift .script { font-size: 22pt; line-height: 1.1; }
+  .cover .tag { font-size: 7.6pt; letter-spacing: .32em; text-transform: uppercase; color: var(--gold); }
+
+  .back { background: linear-gradient(180deg, #fff, #fbeee2); text-align: center; justify-content: center; align-items: center; }
+  .portrait { width: 34mm; height: 34mm; border-radius: 50%; overflow: hidden; border: 3px solid #fff; box-shadow: 0 0 0 1px #ecc4a6, 0 6px 18px rgba(130, 70, 30, .18); flex: none; }
+  .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; }
+  .toc { list-style: none; padding: 0; margin: 2mm 0 0; counter-reset: t; }
+  .toc li { display: flex; gap: 3mm; padding: 1.1mm 0; border-bottom: 1px dashed #ecd9c9; font-size: 10.2pt; }
+  .toc li::before { counter-increment: t; content: counter(t); font-family: var(--serif); color: var(--flame-2); font-weight: 700; width: 5mm; }
+  .toc li span { margin-left: auto; color: var(--soft); }
+  .smallprint { font-size: 7.8pt; color: var(--soft); line-height: 1.5; }
+  .bar { display: flex; justify-content: center; gap: 3mm; margin: 0 0 8mm; }
+  .bar a { background: var(--flame); color: #fff; text-decoration: none; padding: 3mm 6mm; border-radius: 99px; font-size: 10pt; }
+  .bar a.ghost { background: #fff; color: var(--flame); border: 1px solid #ecc4a6; }
+</style>
+</head>
+<body>
+
+<div class="bar noprint" style="padding-top:8mm">
+  <a href="downloads/rise-like-a-phoenix-ebook.pdf" download>Download als PDF</a>
+  <a href="#" class="ghost" onclick="window.print();return false">Afdrukken</a>
+  <a href="index.html" class="ghost">Naar de website</a>
+</div>
+
+<!-- 1 COVER -->
+<section class="page cover">
+  <div class="cover-inner">
+    <div class="brand"><img src="images/logo.avif" alt="">Rise Like A Phoenix</div>
+    <h1>Rijs op<br>als een <span class="accent">feniks</span></h1>
+    <p class="sub">Je eerste kennismaking met de Emotiecode, de Hartmuur, de Body Code en de Belief Code. Met gouden tips om vandaag al te beginnen.</p>
+    <img class="bird" src="images/logo.avif" alt="">
+    <div class="gift">
+      <div><span class="tag">Een cadeautje van</span><div class="script">Nathalie De Ruysscher</div></div>
+      <span class="tag">Heal · Release · Rise</span>
+    </div>
+  </div>
+</section>
+
+<!-- 2 WELKOM -->
+<section class="page">
+  <span class="eyebrow">Welkom</span>
+  <div style="display:grid;grid-template-columns:1fr 36mm;gap:8mm;align-items:start">
+    <div>
+      <h2>Fijn dat je er bent</h2>
+      <p class="lead">Je hebt een stap gezet. Misschien uit nieuwsgierigheid, misschien omdat je voelt dat er iets mag veranderen. Hoe dan ook: welkom.</p>
+    </div>
+    <div class="portrait"><img src="https://static.wixstatic.com/media/a67f0c_da7ce2c0d6414a87b13addb1d9b5540b~mv2.jpeg" alt=""></div>
+  </div>
+  <p>Voor veel mensen is dit de eerste keer dat ze horen over vastzittende emoties, een Hartmuur of het onderbewustzijn als "harde schijf" van het lichaam. Dat kan vreemd of spannend klinken. Daarom schreef ik dit e-book: zodat je rustig kan lezen wat er gaat gebeuren, waarom het werkt zoals het werkt, en wat je zelf al kan doen.</p>
+  <p>Ik werk met de methodes van <strong>Dr. Bradley Nelson</strong>, een Amerikaanse chiropractor die decennialang onderzocht hoe emoties en energie in ons lijf blijven hangen. Ik ontdekte zijn werk zelf op een moment dat ik vastliep. Wat ik toen voelde (lichter, vrijer, meer mezelf) gun ik iedereen.</p>
+  <div class="box">
+    <h3>Hoe gebruik je dit boekje?</h3>
+    <ul class="dots">
+      <li>Lees het in je eigen tempo. Je hoeft niets te onthouden.</li>
+      <li>Probeer de <strong>gouden tips</strong> in hoofdstuk 8. Kies er één die je aanspreekt.</li>
+      <li>Vul het <strong>werkblad</strong> in. Het helpt jou om helder te krijgen wat je wil loslaten, en mij om je goed te begeleiden.</li>
+      <li>Hou vragen bij. We bespreken ze graag samen.</li>
+    </ul>
+  </div>
+  <h3>Inhoud</h3>
+  <ol class="toc">
+    <li>Alles is energie <span>3</span></li>
+    <li>De Emotiecode <span>4</span></li>
+    <li>De Hartmuur <span>6</span></li>
+    <li>De Body Code <span>7</span></li>
+    <li>De Belief Code <span>8</span></li>
+    <li>Hoe werkt een traject bij mij? <span>9</span></li>
+    <li>Na een sessie <span>10</span></li>
+    <li>Gouden tips om nu al te beginnen <span>11</span></li>
+    <li>Werkblad: jouw startpunt <span>13</span></li>
+    <li>Veelgestelde vragen <span>14</span></li>
+  </ol>
+  <div class="pnum"><span>Rise Like A Phoenix</span><span>2</span></div>
+</section>
+
+<!-- 3 ENERGIE -->
+<section class="page">
+  <div class="chapter-no">01</div>
+  <span class="eyebrow">Hoofdstuk 1</span>
+  <h2>Alles is energie</h2>
+  <p class="lead">Alles wat bestaat, trilt: licht, geluid, je gedachten, je lichaam. Ook emoties zijn energie in beweging. Het woord zegt het zelf: <em>e-motion</em>.</p>
+  <p>Normaal gezien beweegt een emotie door je heen. Je voelt boosheid, verdriet of angst, het piekt, en dan zakt het weer. Zo hoort het ook. Maar soms is een moment te groot, te plots of te pijnlijk. Of je bent net moe, ziek of al overbelast. Dan kan het gebeuren dat een emotie niet helemaal verwerkt wordt en <strong>blijft hangen</strong>.</p>
+  <p>Dr. Nelson beschrijft zo'n <strong>vastzittende emotie</strong> als een klein balletje energie dat zich ergens in het lichaam nestelt. Je ziet het niet en je weet vaak niet eens dat het er zit. Toch kan het blijven doorwerken, net zoals een stemvork die blijft natrillen: het lichaam blijft een beetje "afgestemd" op die oude emotie.</p>
+  <div class="box">
+    <h3>Een herkenbaar beeld</h3>
+    <p>Ken je dat gevoel dat je in een bepaalde situatie veel heftiger reageert dan je zelf zou willen? Of dat je met je hoofd perfect weet dat iets niet meer nodig is, maar je lijf reageert alsof het gevaar er nog is? Dat is vaak het moment waarop een oude, vastzittende emotie meespeelt.</p>
+  </div>
+  <h3>Wat kunnen vastzittende emoties doen?</h3>
+  <p>Volgens Dr. Nelson kunnen ze bijdragen aan heel uiteenlopende klachten:</p>
+  <div class="grid2">
+    <ul class="dots">
+      <li>steeds terugkerende patronen in relaties of werk</li>
+      <li>angst, onrust of somberheid</li>
+      <li>snel getriggerd zijn</li>
+    </ul>
+    <ul class="dots">
+      <li>vermoeidheid of het gevoel vast te zitten</li>
+      <li>lichamelijke spanning of pijn</li>
+      <li>moeite om liefde te geven en te ontvangen</li>
+    </ul>
+  </div>
+  <div class="note"><strong>Belangrijk:</strong> niet elke klacht heeft een emotionele oorzaak, en energiewerk vervangt nooit je huisarts, psycholoog of medicatie. Zie het als een warme aanvulling: we kijken naar wat er op een dieper, energetisch niveau mag loskomen.</div>
+  <p class="quote end">"Wat je niet voelt, kan je niet loslaten. Wat je wél ziet, kan je bevrijden."</p>
+  <div class="pnum"><span>Alles is energie</span><span>3</span></div>
+</section>
+
+<!-- 4 EMOTIECODE 1 -->
+<section class="page">
+  <div class="chapter-no">02</div>
+  <span class="eyebrow">Hoofdstuk 2</span>
+  <h2>De Emotiecode</h2>
+  <p class="lead">De Emotiecode is een eenvoudige, zachte methode om vastzittende emoties op te sporen en los te laten, één voor één.</p>
+  <h3>Waar komen ze vandaan?</h3>
+  <div class="grid3">
+    <div class="card"><h4>Je eigen leven</h4><p>Momenten die je hebt meegemaakt: een verlies, een ruzie, een ontgoocheling, een schrik, een periode van stress. Ook als kind, ook als je het je niet meer herinnert.</p></div>
+    <div class="card"><h4>Overgeërfd</h4><p>Volgens Dr. Nelson kunnen emoties ook doorgegeven worden van ouders en grootouders. Soms dragen we iets mee dat eigenlijk niet van ons is.</p></div>
+    <div class="card"><h4>Overgenomen</h4><p>Wie zich sterk inleeft in anderen, kan emoties van iemand in de buurt "opnemen", bijvoorbeeld van een partner of kind in een moeilijke tijd.</p></div>
+  </div>
+  <h3>Hoe vinden we ze?</h3>
+  <p>Je onderbewustzijn weet precies wat er ooit is opgeslagen. Met <strong>spiertesten</strong> (ook kinesiologie genoemd) kunnen we het eenvoudige ja/nee-vragen stellen. Het lichaam reageert op wat waar is voor jou: bij een "ja" blijft de spier sterk, bij een "nee" geeft ze even mee.</p>
+  <p>Dr. Nelson ontwikkelde hiervoor een kaart met <strong>60 emoties</strong>, verdeeld in groepjes. Stap voor stap vragen we: welke emotie is het? Wanneer is ze ontstaan? Is ze van jou, overgeërfd of overgenomen? Je hoeft er niets over te vertellen: alleen weten dát ze er is, is genoeg om ze los te laten.</p>
+  <p class="muted" style="margin-bottom:1mm">Een paar voorbeelden van emoties op die kaart:</p>
+  <div class="emo"><span>verlatenheid</span><span>angst</span><span>verdriet</span><span>schuld</span><span>frustratie</span><span>onzekerheid</span><span>schaamte</span><span>machteloosheid</span><span>verraad</span><span>hartzeer</span><span>ontmoediging</span><span>overweldiging</span></div>
+  <div class="flow">
+    <div class="flow-step"><div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6c0 2.2 1.2 3.6 2.4 4.7.8.8 1.1 1.5 1.1 2.3v1h5v-1c0-.8.3-1.5 1.1-2.3C16.8 12.6 18 11.2 18 9a6 6 0 0 0-6-6zM10 20h4"/></svg></div><strong>Vraag</strong><span>Is er een emotie die nu mag gaan?</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M7 12h10M12 7v10"/><circle cx="12" cy="12" r="8.5"/></svg></div><strong>Spiertest</strong><span>Het lichaam antwoordt ja of nee</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.6 4 4.5 7.2 4.5c2 0 3.4 1.1 4.8 2.9 1.4-1.8 2.8-2.9 4.8-2.9 3.2 0 5.6 3.1 4.4 6.6-1.7 4.8-9.2 9.4-9.2 9.4z"/></svg></div><strong>Vinden</strong><span>Welke emotie, wanneer, van wie</span></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-ic"><svg viewBox="0 0 24 24"><path d="M5 19c4-1 7-4 9-8l2-5M14 6h4v4M4 14c1.5 0 3 .5 4 1.5"/></svg></div><strong>Loslaten</strong><span>Met een magneet langs de rug</span></div>
+  </div>
+  <div class="pnum"><span>De Emotiecode</span><span>4</span></div>
+</section>
+
+<!-- 5 EMOTIECODE 2 -->
+<section class="page">
+  <span class="eyebrow">De Emotiecode · vervolg</span>
+  <h3 style="margin-top:0">Hoe laten we ze los?</h3>
+  <p>Wanneer we een vastzittende emotie gevonden hebben, laten we ze los met een <strong>magneet</strong> (of gewoon de hand) die enkele keren over de <strong>Gouverneursmeridiaan</strong> glijdt. Dat is een energiebaan die van de bovenlip over het hoofd en langs de ruggengraat loopt. Volgens Dr. Nelson werkt die meridiaan als een soort hoofdverdeler van het energiesysteem: zo bereikt de intentie om los te laten het hele lichaam.</p>
+  <p>Het voelt heel onspectaculair: geen pijn, geen uitkleden, geen heftige ervaringen. Bij mij gebeurt het bovendien meestal op afstand, dus jij hoeft er zelfs niet bij te zijn (meer daarover in hoofdstuk 6).</p>
+  <div class="box">
+    <h3>Laag na laag</h3>
+    <p>Denk aan een ui. Er zit niet één emotie, maar een hele geschiedenis. Je onderbewustzijn bepaalt welke emotie als eerste klaar is om te gaan. Daarom werken we in sessies: elke keer komt de volgende laag aan de beurt. Het lichaam krijgt zo telkens tijd om zich aan te passen.</p>
+  </div>
+  <h3>Wat merken mensen?</h3>
+  <p>Iedereen is anders. Sommigen voelen meteen een verschil, bij anderen gaat het subtieler en zien ze het pas achteraf: ze reageren rustiger, slapen beter, voelen meer ruimte of merken dat een oud patroon niet meer zo hard trekt. In de ervaringen op mijn website lees je wat cliënten zelf vertellen, bijvoorbeeld:</p>
+  <p class="quote" style="font-size:14pt">"Het is alsof er een blok is afgevallen. Ik ervaar minder angst en stress en heb meer vertrouwen in het leven."<br><span style="font-family:var(--sans);font-style:normal;font-size:9pt;color:var(--soft)">— Heidi T.</span></p>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr;align-items:center;gap:6mm;margin-top:2mm">
+    <div class="note" style="margin:0">De Emotiecode kan ook gebruikt worden voor <strong>dieren</strong>. Ook zij kunnen schrik, verlies of stress meedragen. Een sessie gebeurt dan via jou of rechtstreeks op afstand.</div>
+    <div class="photo" style="height:48mm;margin:0"><img src="https://static.wixstatic.com/media/a67f0c_c073e5550155476fb3f0983151d29c9b~mv2.jpg" alt=""></div>
+  </div>
+  <div class="pnum"><span>De Emotiecode</span><span>5</span></div>
+</section>
+
+<!-- 6 HARTMUUR -->
+<section class="page">
+  <div class="chapter-no">03</div>
+  <span class="eyebrow">Hoofdstuk 3</span>
+  <h2>De Hartmuur</h2>
+  <p class="lead">Wanneer je hart pijn heeft gedaan, wil je onderbewustzijn je beschermen. Soms bouwt het daarvoor een muur.</p>
+  <p>Dr. Nelson ontdekte dat vastzittende emoties zich soms opstapelen rond het hart, laag na laag, als een beschermend schild. Hij noemt dat de <strong>Hartmuur</strong>. Het is een slimme reactie van je systeem: na verdriet, afwijzing of verlies wil het voorkomen dat je opnieuw zo gekwetst wordt.</p>
+  <p>Het probleem? Een muur houdt niet alleen pijn buiten, maar ook liefde, vreugde en verbinding. In 2025 schreef hij er samen met zijn vrouw Jean een volledig boek over: <em>The Heart Code</em>. Volgens hem hebben heel veel mensen, zonder het te weten, zo'n muur rond hun hart.</p>
+  <h3>Herken je iets hiervan?</h3>
+  <div class="grid2">
+    <ul class="dots">
+      <li>Je voelt je soms afgesloten of "op afstand", ook van mensen die je graag ziet</li>
+      <li>Liefde of complimenten ontvangen voelt ongemakkelijk</li>
+      <li>Je bent altijd een beetje op je hoede</li>
+    </ul>
+    <ul class="dots">
+      <li>Je trekt telkens dezelfde soort relaties aan</li>
+      <li>Je voelt een leegte of zwaarte ter hoogte van je borst</li>
+      <li>Je geeft veel, maar laat moeilijk iets binnen</li>
+    </ul>
+  </div>
+  <h3>Hoe gaat het vrijmaken?</h3>
+  <p>De Hartmuur bestaat uit vastzittende emoties. We halen ze dus weg met dezelfde zachte methode als bij de Emotiecode, laag per laag, tot de muur helemaal weg is. Bij mij gebeurt dat in een pakket van drie sessies. Blijken er minder nodig te zijn, dan gebruiken we de overige sessie(s) voor andere thema's die jij wil aanpakken.</p>
+  <div class="box">
+    <h3>Wat cliënten vertellen</h3>
+    <p>"Sinds het verwijderen van mijn Hartmuur ervaar ik meer innerlijke rust, stabiliteit en harmonie. Ik kan meer vanuit mijn hart verbinding maken." <span class="muted">— Marijke T.</span></p>
+  </div>
+  <div class="photo" style="height:38mm"><img src="https://static.wixstatic.com/media/24c1d1388bc04d0b867bdd388e1dc03b.jpg" alt="" style="object-position:50% 40%"></div>
+  <div class="pnum"><span>De Hartmuur</span><span>6</span></div>
+</section>
+
+<!-- 7 BODY CODE -->
+<section class="page">
+  <div class="chapter-no">04</div>
+  <span class="eyebrow">Hoofdstuk 4</span>
+  <h2>De Body Code</h2>
+  <p class="lead">De Emotiecode is eigenlijk één onderdeel van een groter systeem: de Body Code. Daarmee kijken we naar het héle lichaam.</p>
+  <p>Onze lichamen bewaren alles wat we ooit hebben meegemaakt. De Body Code gaat ervan uit dat je onderbewustzijn precies weet wat er uit balans is én in welke volgorde het best hersteld kan worden. Met spiertesten volgen we die "routekaart" naar de <strong>diepere oorzaak</strong>, in plaats van enkel naar het symptoom te kijken. Dr. Nelson ontwikkelde daarvoor overzichtelijke schema's (hij noemt ze mind maps) die zes gebieden omvatten:</p>
+  <div class="grid3" style="margin:3mm 0 4mm">
+    <div class="card"><h4>Energieën</h4><p>Vastzittende emoties, de Hartmuur en andere energieën die tijdens stressvolle momenten zijn blijven hangen.</p></div>
+    <div class="card"><h4>Circuits &amp; systemen</h4><p>De energiebanen van het lichaam: meridianen, chakra's en de circuits van organen en klieren.</p></div>
+    <div class="card"><h4>Verkeerde uitlijning</h4><p>Fysieke en energetische scheefstand: van wervels en gewrichten tot organen en weefsels.</p></div>
+    <div class="card"><h4>Toxiciteit</h4><p>Stoffen of energieën waar het lichaam last van heeft, fysiek of energetisch.</p></div>
+    <div class="card"><h4>Pathogenen</h4><p>De energetische afdruk van bacteriën, virussen of schimmels die nog nawerkt.</p></div>
+    <div class="card"><h4>Voeding &amp; levensstijl</h4><p>Wat je lichaam vraagt: bepaalde voedingsstoffen, beweging, rust of andere gewoontes.</p></div>
+  </div>
+  <p>Een Body Code-sessie omvat dus altijd de Emotiecode, maar kan ook andere onevenwichtigheden aan het licht brengen. Daarom bied ik ze samen aan als <strong>Body Code &amp; Emotiecode</strong>.</p>
+  <div class="note">De Body Code stelt geen medische diagnoses en schrijft geen behandelingen voor. Duikt er iets op dat aandacht vraagt van een arts of specialist, dan raad ik je altijd aan om daarmee langs te gaan.</div>
+  <div class="photo" style="height:52mm"><img src="https://static.wixstatic.com/media/a67f0c_15ab83e0c5ca4c3482255efc40c449b8~mv2.jpg" alt=""></div>
+  <div class="pnum"><span>De Body Code</span><span>7</span></div>
+</section>
+
+<!-- 8 BELIEF CODE -->
+<section class="page">
+  <div class="chapter-no">05</div>
+  <span class="eyebrow">Hoofdstuk 5</span>
+  <h2>De Belief Code</h2>
+  <p class="lead">Wat je diep vanbinnen gelooft over jezelf, bepaalt vaak meer dan je denkt.</p>
+  <p>De Belief Code is de nieuwste methode van Dr. Bradley Nelson, ontwikkeld samen met Josh Nelson. Ze bouwt verder op de Emotiecode en de Body Code, maar richt zich op <strong>overtuigingen</strong>: de onzichtbare "programma's" die we vaak al als kind hebben opgepikt.</p>
+  <div class="emo"><span>"Ik ben niet goed genoeg."</span><span>"Ik moet het alleen doen."</span><span>"Geld is moeilijk."</span><span>"Liefde is niet veilig."</span><span>"Ik mag geen ruimte innemen."</span></div>
+  <p>Het lastige aan zulke overtuigingen: ze zitten niet in je bewuste hoofd. Misschien weet je perfect dat ze niet kloppen, en toch voel je ze in je reacties, je keuzes en je zelftwijfel.</p>
+  <h3>Hoe werkt het?</h3>
+  <ul class="dots">
+    <li>Met spiertesten zoeken we welke overtuiging nu klaar is om aangepakt te worden.</li>
+    <li>We kijken ook naar wat eronder zit: een vastzittende emotie, een herinnering, een patroon. Zo pakken we de wortel aan.</li>
+    <li>We laten de negatieve overtuiging los en maken ruimte voor een nieuwe, ondersteunende overtuiging.</li>
+  </ul>
+  <div class="box">
+    <h3>Een mooie voorwaarde</h3>
+    <p>De Belief Code werkt met overtuigingen die <strong>niet meer passen</strong> bij wie jij nu bewust wil zijn. Je hoeft niets te geloven wat niet klopt voor jou. Het enige wat telt: dat jij zelf wil veranderen.</p>
+  </div>
+  <h3>Kleine oefening: welke zin raakt je?</h3>
+  <p>Lees de zinnen hieronder langzaam, één voor één. Merk op bij welke zin je lichaam reageert: een zucht, een knoop in je buik, een "ja, maar...". Daar zit vaak iets moois om naar te kijken.</p>
+  <ul class="dots">
+    <li>Ik mag gelukkig zijn, ook als het anderen niet goed gaat.</li>
+    <li>Ik ben goed zoals ik ben.</li>
+    <li>Ik mag hulp vragen en ontvangen.</li>
+  </ul>
+  <p class="quote end">"Je bent niet je oude verhaal.<br>Je bent wie er overblijft als het loskomt."</p>
+  <div class="pnum"><span>De Belief Code</span><span>8</span></div>
+</section>
+
+<!-- 9 TRAJECT -->
+<section class="page">
+  <div class="chapter-no">06</div>
+  <span class="eyebrow">Hoofdstuk 6</span>
+  <h2>Hoe werkt een traject bij mij?</h2>
+  <p class="lead">Rustig, persoonlijk en grotendeels op afstand. Jij hoeft eigenlijk enkel open te staan.</p>
+  <div class="steps" style="margin:4mm 0 5mm">
+    <div class="step"><div><strong>Je vult de vragenlijst in</strong><span>Zo leer ik je al een beetje kennen en weet ik waar je mee zit. Dat heb je al gedaan, top!</span></div></div>
+    <div class="step"><div><strong>We maken kennis</strong><span>In een kort gesprek overlopen we je vragen en wat je wil loslaten, en ik leg uit hoe ik werk.</span></div></div>
+    <div class="step"><div><strong>De sessies gebeuren op afstand</strong><span>Op het afgesproken moment werk ik voor jou. Je hoeft niet online te zijn: je kan gewoon je dag verderzetten.</span></div></div>
+    <div class="step"><div><strong>Na elke sessie krijg je een berichtje</strong><span>Met wat er losgekomen is en een paar tips voor de dagen erna.</span></div></div>
+    <div class="step"><div><strong>Afronding en nazorg</strong><span>Na je laatste sessie blijf ik bereikbaar. Na een paar weken vraag ik hoe het met je gaat.</span></div></div>
+  </div>
+  <h3>Hoe kan dat, op afstand?</h3>
+  <p>Energie kent geen afstand. Dr. Nelson werkt zelf ook vaak via een zogenaamde <strong>surrogaat</strong>: iemand (in dit geval ik) die met jouw toestemming verbinding maakt met jouw energie en de spiertesten in jouw plaats doet. Je onderbewustzijn geeft zo nog altijd zelf de antwoorden.</p>
+  <p>Dat maakt het ook heel toegankelijk: geen verplaatsing, geen wachtzaal, en je bent niet gebonden aan een afspraak waarbij je stil moet zitten. Het werkt zelfs voor dieren.</p>
+  <div class="note">Toestemming is altijd de basis. Ik werk enkel voor jou wanneer jij dat wil, en enkel met wat jouw onderbewustzijn klaar is om te laten gaan.</div>
+  <div class="photo" style="height:52mm"><img src="https://static.wixstatic.com/media/a67f0c_644fb2498bad4c769aa87b8df2bcee12~mv2.jpg" alt="" style="object-position:50% 25%"></div>
+  <div class="pnum"><span>Hoe werkt een traject?</span><span>9</span></div>
+</section>
+
+<!-- 10 NA EEN SESSIE -->
+<section class="page">
+  <div class="chapter-no">07</div>
+  <span class="eyebrow">Hoofdstuk 7</span>
+  <h2>Na een sessie</h2>
+  <p class="lead">Wanneer er iets loskomt, heeft je lichaam soms even tijd nodig om zich opnieuw te ordenen. Dat heet <strong>verwerking</strong>.</p>
+  <p>Die verwerking duurt meestal één tot een paar dagen. Wat je kan merken is heel verschillend:</p>
+  <div class="grid3" style="margin:3mm 0 5mm">
+    <div class="card"><h4>Lichter</h4><p>Een gevoel van ruimte, rust of opluchting. Alsof er iets van je schouders valt.</p></div>
+    <div class="card"><h4>Moe of emotioneel</h4><p>Een oude emotie komt nog even "langs" voor ze vertrekt, of je hebt extra slaap nodig.</p></div>
+    <div class="card"><h4>Niets bijzonders</h4><p>Ook dat is helemaal oké. Vaak merk je het verschil pas later, in hoe je reageert.</p></div>
+  </div>
+  <h3>Zo help je je lichaam</h3>
+  <div class="grid2">
+    <ul class="dots">
+      <li><strong>Drink extra water.</strong> Simpel, maar het helpt je lijf.</li>
+      <li><strong>Gun jezelf rust.</strong> Plan geen overvolle dag na een sessie.</li>
+      <li><strong>Ga naar buiten.</strong> Een wandeling in de natuur aardt.</li>
+    </ul>
+    <ul class="dots">
+      <li><strong>Neem een warm bad</strong> of douche bewust.</li>
+      <li><strong>Schrijf op</strong> wat je opvalt: dromen, gevoelens, inzichten.</li>
+      <li><strong>Wees mild</strong> voor jezelf. Alles mag er zijn.</li>
+    </ul>
+  </div>
+  <div class="box" style="margin-top:5mm">
+    <h3>Wanneer contact opnemen?</h3>
+    <p>Twijfel je over iets of voelt het zwaar aan? Stuur me gerust een berichtje, daar ben ik voor. Heb je ernstige of aanhoudende lichamelijke of psychische klachten, neem dan altijd contact op met je huisarts.</p>
+  </div>
+  <h3>Mini-ritueel voor de avond van je sessie</h3>
+  <p>Steek een kaarsje aan, leg een hand op je hart en zeg in jezelf: <em>"Wat mocht gaan, mag nu gaan. Ik maak ruimte voor rust."</em> Schrijf daarna één zin op over hoe je je voelt. Klaar. Zo geef je je lichaam een duidelijk signaal: dit is een moment van loslaten.</p>
+  <p class="quote end">"Loslaten is geen verlies.<br>Het is ruimte maken voor wie je echt bent."</p>
+  <div class="pnum"><span>Na een sessie</span><span>10</span></div>
+</section>
+
+<!-- 11 TIPS 1 -->
+<section class="page">
+  <div class="chapter-no">08</div>
+  <span class="eyebrow">Hoofdstuk 8</span>
+  <h2>Gouden tips om nu al te beginnen</h2>
+  <p class="lead">Tot onze eerste sessie kan je zelf al veel doen. Kies één tip die je aanspreekt en probeer ze een week lang.</p>
+  <div class="tip"><div class="n">1</div><div><h4>Geef je gevoel een naam</h4><p>Wanneer je iets voelt opkomen, zeg dan (hardop of in jezelf): "Ik voel... verdriet." Benoemen helpt je zenuwstelsel tot rust te komen en geeft je een beetje afstand tot de emotie.</p><p class="how">Probeer het 3× per dag. Hou het simpel: één woord is genoeg.</p></div></div>
+  <div class="tip"><div class="n">2</div><div><h4>Waar zit het in je lijf?</h4><p>Emoties voel je niet alleen in je hoofd. Sluit je ogen, adem rustig en scan van je kruin tot je tenen. Waar voel je spanning, warmte, druk of leegte? Je hoeft niets op te lossen: alleen opmerken.</p><p class="how">3 minuten, bijvoorbeeld 's avonds in bed.</p></div></div>
+  <div class="tip"><div class="n">3</div><div><h4>De zucht van opluchting</h4><p>Adem in door je neus, neem bovenop nog een klein extra hapje lucht, en adem dan heel langzaam en lang uit door je mond. Dit is een van de snelste manieren om je lichaam te laten weten: het is veilig.</p><p class="how">Herhaal 2 à 3 keer, zo vaak als je wil.</p></div></div>
+  <div class="tip"><div class="n">4</div><div><h4>Schrijf het van je af</h4><p>Neem 10 minuten en schrijf zonder te stoppen over iets wat je bezighoudt: wat er gebeurde, wat je voelde, wat je nog altijd voelt. Niemand hoeft het te lezen. Je mag het daarna zelfs verscheuren.</p><p class="how">4 dagen na elkaar, telkens 10 minuten.</p></div></div>
+  <div class="tip"><div class="n">5</div><div><h4>Hand op je hart</h4><p>Leg je hand op je borst, voel de warmte en adem rustig. Zeg in jezelf: "Dit is moeilijk. Ik mag zacht zijn voor mezelf." Het lijkt klein, maar het is een krachtig signaal van zelfzorg, zeker als je een Hartmuur vermoedt.</p><p class="how">1 minuut, 's ochtends of op een zwaar moment.</p></div></div>
+  <p class="quote end">"Je hoeft niet alles tegelijk te doen.<br>Eén bewuste ademhaling is ook een begin."</p>
+  <div class="pnum"><span>Gouden tips</span><span>11</span></div>
+</section>
+
+<!-- 12 TIPS 2 -->
+<section class="page">
+  <span class="eyebrow">Gouden tips · vervolg</span>
+  <div class="tip"><div class="n">6</div><div><h4>Speel met de Sway Test</h4><p>Dr. Nelson leert iedereen deze eenvoudige manier om naar je lichaam te luisteren. Ga ontspannen rechtop staan, voeten op heupbreedte, armen langs je lichaam, in een rustige ruimte. Sluit je ogen en zeg een ware uitspraak, zoals je eigen naam: "Mijn naam is ...". Voel hoe je lichaam heel licht naar voren beweegt. Zeg daarna een onware uitspraak (een andere naam) en merk hoe je lichaam naar achteren wil.</p><p class="how">Zie het als een speelse kennismaking met je onderbewustzijn. Gebruik het niet voor grote beslissingen.</p></div></div>
+  <div class="tip"><div class="n">7</div><div><h4>Zorg voor de basis</h4><p>Je lichaam kan het best loslaten als het goed verzorgd is: voldoende water, slaap, beweging en buitenlucht. Het klinkt eenvoudig, maar het maakt echt verschil, voor én na je sessies.</p><p class="how">Kies deze week één basis om extra aandacht aan te geven.</p></div></div>
+  <div class="tip"><div class="n">8</div><div><h4>Dankbaarheid voor het slapengaan</h4><p>Schrijf elke avond drie kleine dingen op waar je dankbaar voor bent. Het helpt je brein om naast wat zwaar is ook te zien wat goed is, en je slaapt vaak rustiger.</p><p class="how">2 minuten per avond.</p></div></div>
+  <div class="box">
+    <h3>Mijn tip voor deze week</h3>
+    <p class="muted" style="font-size:9.6pt">Welke tip kies je? Wanneer ga je hem doen?</p>
+    <div class="lines"></div><div class="lines"></div>
+  </div>
+  <p class="quote end">"Elke kleine stap naar jezelf toe,<br>is een stap uit de as."</p>
+  <div class="pnum"><span>Gouden tips</span><span>12</span></div>
+</section>
+
+<!-- 13 WERKBLAD -->
+<section class="page">
+  <span class="eyebrow">Werkblad</span>
+  <h2>Jouw startpunt</h2>
+  <p class="muted">Print deze pagina of neem een notitieboekje. Er zijn geen foute antwoorden.</p>
+  <div class="q">Wat wil ik loslaten?</div><div class="lines"></div><div class="lines"></div>
+  <div class="q">Hoe wil ik me voelen na mijn traject?</div><div class="lines"></div><div class="lines"></div>
+  <div class="q">Welk patroon komt in mijn leven steeds terug?</div><div class="lines"></div><div class="lines"></div>
+  <div class="q">Wat zou ik doen als dit oude gevoel er niet meer was?</div><div class="lines"></div>
+  <div class="q" style="margin-top:6mm">Mijn emotiedagboek (7 dagen)</div>
+  <table class="diary">
+    <thead><tr><th style="width:16%">Dag</th><th style="width:30%">Wat voelde ik?</th><th style="width:24%">Waar in mijn lijf?</th><th>Wat hielp?</th></tr></thead>
+    <tbody><tr><td>1</td><td></td><td></td><td></td></tr><tr><td>2</td><td></td><td></td><td></td></tr><tr><td>3</td><td></td><td></td><td></td></tr><tr><td>4</td><td></td><td></td><td></td></tr><tr><td>5</td><td></td><td></td><td></td></tr><tr><td>6</td><td></td><td></td><td></td></tr><tr><td>7</td><td></td><td></td><td></td></tr></tbody>
+  </table>
+  <div class="pnum"><span>Werkblad</span><span>13</span></div>
+</section>
+
+<!-- 14 FAQ -->
+<section class="page faq">
+  <span class="eyebrow">Hoofdstuk 10</span>
+  <h2>Veelgestelde vragen</h2>
+  <h4>Moet ik erin geloven voor het werkt?</h4>
+  <p>Nee. Je mag gerust nieuwsgierig of sceptisch zijn. Wat wel helpt, is dat je openstaat en zelf wil veranderen.</p>
+  <h4>Voel ik iets tijdens een sessie op afstand?</h4>
+  <p>Soms wel (warmte, ontspanning, een emotie die opkomt), vaak ook niets. Beide zijn normaal. Het effect merk je meestal in de dagen en weken erna.</p>
+  <h4>Hoeveel sessies heb ik nodig?</h4>
+  <p>Dat hangt af van wat je meedraagt en van je doel. Een Hartmuur vraagt meestal 1 tot 3 sessies. Voor andere thema's kies je een pakket van 3, 6 of 12 sessies. We bekijken samen wat bij jou past.</p>
+  <h4>Moet ik vertellen wat er vroeger gebeurd is?</h4>
+  <p>Nee. Je onderbewustzijn wijst de weg; je hoeft geen pijnlijke verhalen te herbeleven. Wil je iets delen, dan is dat altijd welkom.</p>
+  <h4>Is het veilig?</h4>
+  <p>De methode is zacht en niet-invasief. We werken enkel met wat je onderbewustzijn klaar is om los te laten.</p>
+  <h4>Vervangt dit mijn arts of therapeut?</h4>
+  <p>Nee, nooit. Energiewerk is een aanvulling. Blijf je medische behandeling volgen en raadpleeg bij klachten altijd je huisarts.</p>
+  <h4>Kan het ook voor kinderen of dieren?</h4>
+  <p>Ja. Voor kinderen gebeurt het met toestemming van een ouder. Voor dieren is er een aparte sessie: Emotiecode voor Dieren.</p>
+  <h4>Wat als ik na een sessie niets merk?</h4>
+  <p>Dat is heel normaal. Verandering gaat soms stil: je merkt pas na een tijdje dat je anders reageert of dat iets je minder raakt. Het emotiedagboek op het werkblad helpt je om die kleine verschuivingen te zien.</p>
+  <h4>Hoe bereid ik me voor op een sessie?</h4>
+  <p>Je hoeft niets speciaals te doen. Drink voldoende water, plan na de sessie wat rust in en lees gerust nog eens je antwoorden op het werkblad.</p>
+  <div class="box" style="margin-top:5mm">
+    <h3>Nog een vraag?</h3>
+    <p>Stel ze gerust, via mail of telefoon. Er bestaan geen domme vragen, zeker niet als je dit voor het eerst ontdekt.</p>
+  </div>
+  <div class="pnum"><span>Veelgestelde vragen</span><span>14</span></div>
+</section>
+
+<!-- 15 ACHTERKANT -->
+<section class="page back">
+  <img src="images/logo.avif" alt="" style="width:46mm;margin-bottom:6mm">
+  <h2 style="font-size:32pt">Tot heel snel</h2>
+  <p class="lead" style="max-width:130mm">Ik kijk ernaar uit om je te begeleiden. Heb je intussen een vraag? Stuur me gerust een berichtje.</p>
+  <div class="script" style="font-size:24pt;margin:4mm 0 8mm">Liefs, Nathalie</div>
+  <p style="line-height:1.9">
+    <strong>Nathalie De Ruysscher</strong> · Rise Like A Phoenix<br>
+    +32 495 99 34 59 · nathalie@riselikeaphoenix.be<br>
+    Kardinaal Cardijnlaan 86, 2340 Beerse
+  </p>
+  <p class="smallprint" style="max-width:150mm;margin-top:16mm">Dit e-book is gebaseerd op het werk van Dr. Bradley Nelson (o.a. <em>The Emotion Code</em>, <em>The Body Code</em> en <em>The Heart Code</em>) en is in eigen woorden geschreven. Emotion Code®, Body Code® en Belief Code® zijn handelsmerken van Dr. Bradley Nelson / Discover Healing. De informatie in dit e-book is geen medisch advies en vervangt geen diagnose of behandeling door een arts, psycholoog of andere zorgverlener.</p>
+  <p class="smallprint">© Rise Like A Phoenix · Heal · Release · Rise</p>
+</section>
+
+</body>
+</html>
